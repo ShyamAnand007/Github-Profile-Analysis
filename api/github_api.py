@@ -11,7 +11,7 @@ def get_user_profile(username):
         elif response.status_code == 403:
             return {"error": "GitHub API rate limit exceeded. Please try again later."}
     except requests.exceptions.RequestException:
-        return {"error": "Network error. Please try again."}}
+        return {"error": "Network error. Please try again."}
 
 def get_user_repo(username):
     url=f"https://api.github.com/users/{username}/repos"
@@ -24,7 +24,7 @@ def get_user_repo(username):
         elif response.status_code == 403:
             return {"error": "GitHub API rate limit exceeded. Please try again later."}
     except requests.exceptions.RequestException:
-        return {"error": "Network error. Please try again."}}
+        return {"error": "Network error. Please try again."}
 def get_user_language(owner,repo):
     url=f"https://api.github.com/repos/{owner}/{repo}/languages"
     try:
@@ -36,5 +36,5 @@ def get_user_language(owner,repo):
         elif response.status_code == 403:
             return {"error": "GitHub API rate limit exceeded. Please try again later."}
     except requests.exceptions.RequestException:
-        return {"error": "Network error. Please try again."}}
+        return {"error": "Network error. Please try again."}
     
