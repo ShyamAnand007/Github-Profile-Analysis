@@ -1,6 +1,7 @@
 import streamlit as st
 from api.github_api import *
 from analysis.analyzer import *
+from visuals import *
 st.title("GITHUB PROFILE ANALYZER")
 
 username=st.text_input("Enter your github username:")
@@ -23,7 +24,7 @@ if st.button("Search"):
             if isinstance(repos,dict) and "error" in repos:
                 st.error(repos["error"])
             else:
-
+                languages=getlanguage(repos)
                 total_rep=len(repos)
                 total_stars=calculate_t_stars(repos)
                 total_forks=calculate_t_forks(repos)
@@ -56,6 +57,15 @@ if st.button("Search"):
                     st.write("Language:",repo.get("language") or "Unknown")
 
                     st.divider()
+                st.header("Analysis")
+                st.subheader("Language")
+                st.plotly_chart(language_chart(languages),use_container_width=True)
+                st.divider()
+                st.subheader("Repository")
+                st.plotly_chart(repository_chart(repos),use_container_width=True)
+                st.divider()
+                st.subheader("Timeline")
+                st.plotly_chart(timeline_chart(repos),use_container_width=True)
 
 
 
