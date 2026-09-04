@@ -9,6 +9,8 @@ def language_chart(language_data):
     return fig
 
 def repository_chart(repos):
+    if not repos:
+        return None
     repo_names=[]
     repo_stars=[]
     for repo in repos:

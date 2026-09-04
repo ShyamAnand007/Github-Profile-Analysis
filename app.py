@@ -84,7 +84,11 @@ if st.button("Search"):
                 st.plotly_chart(language_chart(languages),use_container_width=True)
                 st.divider()
                 st.subheader("Repository")
-                st.plotly_chart(repository_chart(repos),use_container_width=True)
+                repo_fig = repository_chart(repos)
+                if repo_fig:
+                    st.plotly_chart(repo_fig, use_container_width=True)
+                else:
+                    st.info("No public repositories available to display.")
                 st.divider()
                 st.subheader("Timeline")
                 st.plotly_chart(timeline_chart(repos),use_container_width=True)
