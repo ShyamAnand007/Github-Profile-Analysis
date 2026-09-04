@@ -1,6 +1,8 @@
 import plotly.express as px 
 from datetime import datetime as dt
 def language_chart(language_data):
+    if not language_data:
+        return None
     fig=px.pie(
         names=list(language_data.keys()),
         values=list(language_data.values()),
@@ -29,6 +31,8 @@ def repository_chart(repos):
     return fig
 
 def timeline_chart(repos):
+    if not repos:
+        return None
     repo_names = []
     repo_dates = []
 
