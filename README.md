@@ -35,7 +35,6 @@ github-developer-analytics/
 ├── api/
 ├── analysis/
 ├── visualization/
-├── data/
 ├── utils/
 ├── assets/
 ├── tests/
@@ -116,6 +115,4 @@ The current version focuses on profile and repository analytics. Future updates 
 * GitHub contribution analysis
 * Commit activity analysis
 
-## Project Status
 
-**Completed and deployed using Streamlit Cloud.**
