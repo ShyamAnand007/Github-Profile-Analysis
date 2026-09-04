@@ -35,7 +35,6 @@ github-developer-analytics/
 ├── api/
 ├── analysis/
 ├── visualization/
-├── data/
 ├── utils/
 ├── assets/
 ├── tests/
