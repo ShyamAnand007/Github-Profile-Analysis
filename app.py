@@ -85,7 +85,8 @@ if st.button("Search"):
                 if language_fig:
                     st.plotly_chart(language_fig, use_container_width=True)
                 else:
-                    st.info("No programming language data available.")                st.divider()
+                    st.info("No programming language data available.")                
+                st.divider()
                 st.subheader("Repository")
                 repo_fig = repository_chart(repos)
                 if repo_fig:
