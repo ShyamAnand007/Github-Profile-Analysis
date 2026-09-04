@@ -81,8 +81,11 @@ if st.button("Search"):
                     st.divider()
                 st.header("Analysis")
                 st.subheader("Language")
-                st.plotly_chart(language_chart(languages),use_container_width=True)
-                st.divider()
+                language_fig = language_chart(languages)
+                if language_fig:
+                    st.plotly_chart(language_fig, use_container_width=True)
+                else:
+                    st.info("No programming language data available.")                st.divider()
                 st.subheader("Repository")
                 repo_fig = repository_chart(repos)
                 if repo_fig:
@@ -91,8 +94,12 @@ if st.button("Search"):
                     st.info("No public repositories available to display.")
                 st.divider()
                 st.subheader("Timeline")
-                st.plotly_chart(timeline_chart(repos),use_container_width=True)
+                timeline_fig = timeline_chart(repos)
 
+                if timeline_fig:
+                    st.plotly_chart(timeline_fig, use_container_width=True)
+                else:
+                    st.info("No repository timeline available.")
 
 
     
